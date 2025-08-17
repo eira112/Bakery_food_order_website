@@ -4,6 +4,7 @@ import SignUp from './pages/Signup';
 import Login from './pages/Login';
 import ManageMenu from './pages/ManageMenu';
 import AddProduct from './pages/AddProduct';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
           <Route path='/addProduct' element={<AddProduct/>}></Route>
         </Routes>
       </BrowserRouter>
+
+      <ToastContainer/>
       
     </>
   );

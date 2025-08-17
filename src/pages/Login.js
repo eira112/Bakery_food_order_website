@@ -4,8 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../css/loginStyle.css"; // Adjust path based on your folder structure
 import { logUserIn } from "../services/auth";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const navigate=useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,7 +24,8 @@ const Login = () => {
     const handleSubmit = () => {
         logUserIn(email,password).then((response)=>{
             if(response.data.length>0){
-                console.log("login sucessful");
+              toast.success("login successful!");
+              navigate("/manageMenu",{replace:true}); 
             }
         })
     };
