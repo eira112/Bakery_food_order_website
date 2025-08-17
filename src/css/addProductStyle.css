@@ -1,0 +1,144 @@
+.add-product-container {
+  display: flex;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  color: #333; /* all text in #333 */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #faf7f5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.sidebar-subtitle {
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: #333;
+  border-radius: 8px;
+}
+
+.sidebar-nav a.active {
+  background-color: #e8e4df;
+}
+
+.sidebar-logout {
+  margin-top: auto;
+}
+
+.sidebar-logout a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  margin-left: 220px;
+  padding: 40px;
+}
+
+/* Form takes full width */
+.add-product-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-title {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  background-color: #f0eeeb;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #333;
+}
+
+.submit-btn {
+  background-color: #d4b483;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background-color: #e8e4df;
+}
+
+.submit-btn:hover {
+  background-color: #c69b6d;
+}

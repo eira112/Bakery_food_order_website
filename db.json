@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "a@gmail.com",
+      "password": "password",
+      "name": "a",
+      "phone": "91234670",
+      "address": "bhaktapur"
+    },
+    {
+      "id": "2",
+      "email": "b@gmail.com",
+      "password": "password",
+      "name": "b",
+      "phone": "91234671",
+      "address": "bhaktapur"
+    },
+    {
+      "id": "cec4",
+      "email": "c@gmail.com",
+      "password": "123",
+      "name": "c",
+      "phone": "1234",
+      "address": "ktm"
+    }
+  ]
+}
