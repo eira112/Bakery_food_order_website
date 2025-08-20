@@ -1,60 +1,74 @@
 // src/components/Login.js
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "../css/loginStyle.css"; // Adjust path based on your folder structure
-import { logUserIn } from "../services/auth";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import { logUserIn } from "../services/auth";
+import signupPhoto from "../Assets/signupPhoto.jpeg";
 
 const Login = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
 
-    const handleEmailChange=(e)=>{
-        setEmail(e.target.value);
-    }
-
-    const handlePasswordChange=(e)=>{
-        setPassword(e.target.value);
-    }
-
-    const handleSubmit = () => {
-        logUserIn(email,password).then((response)=>{
-            if(response.data.length>0){
-              toast.success("login successful!");
-              navigate("/manageMenu",{replace:true}); 
-            }
-        })
-    };
+  const handleSubmit = () => {
+    logUserIn(email, password).then((response) => {
+      if (response.data.length > 0) {
+        toast.success("Login successful!");
+        localStorage.setItem("authToken",response.data.id)
+        navigate("/manageMenu", { replace: true });
+      }
+    });
+  };
 
   return (
-    <div className="background">
-      <a href="/" className="go-home">
-        <i className="bi bi-arrow-left"></i> Go Home
+    <div className="min-h-screen relative flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${signupPhoto})` }}>
+      {/* Home button */}
+      <a
+        href="/"
+        className="absolute top-5 left-5 flex items-center text-white font-medium hover:underline transition"
+      >
+        <i className="bi bi-arrow-left mr-2"></i> Go Home
       </a>
 
-      <div className="center-container">
-        <div className="signup-form">
-          <h1>Sign In</h1>
-          <h2>Have an account?</h2>
-          <div className="form-container">
-            {/* Example placeholders for notifications */}
-            {/* <p style={{ color: "green" }}>Success message here</p>
-            <p style={{ color: "red" }}>Error message here</p> */}
+      {/* Form Container */}
+      <div className="w-full max-w-md p-8 rounded-xl bg-white/10 backdrop-blur-sm shadow-lg text-white">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2 text-center">Sign In</h1>
+        <h2 className="text-sm md:text-lg text-white/80 mb-6 text-center">Have an account?</h2>
 
-            <form>
-              <input type="text" name="Email" placeholder="Email" onChange={handleEmailChange}/>
-              <input type="password" name="password" placeholder="Password" onChange={handlePasswordChange}/>
-              <input type="button" value="Sign In" onClick={handleSubmit}/>
-              <p className="forgot-password">
-                <a href="/forgot-password">Forgot Password?</a>
-              </p>
-            </form>
-          </div>
-        </div>
+        <form className="flex flex-col gap-4">
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+            className="px-4 py-3 rounded-2xl bg-white/20 placeholder-white focus:ring-2 focus:ring-indigo-400 focus:outline-none w-full"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={handlePasswordChange}
+            className="px-4 py-3 rounded-2xl bg-white/20 placeholder-white focus:ring-2 focus:ring-indigo-400 focus:outline-none w-full"
+          />
+          <input
+            type="button"
+            value="Sign In"
+            onClick={handleSubmit}
+            className="mt-2 py-3 bg-white text-gray-900 font-medium rounded-2xl hover:bg-white/90 transition w-full cursor-pointer"
+          />
+        </form>
+
+        <p className="text-right mt-2 text-sm">
+          <a
+            href="/forgot-password"
+            className="text-indigo-300 hover:underline"
+          >
+            Forgot Password?
+          </a>
+        </p>
       </div>
     </div>
   );

@@ -1,0 +1,39 @@
+.cart-page {
+  background-color: #f3eee6;
+  min-height: 100vh;
+  font-family: Halton, sans-serif;
+}
+
+.cart-page .card {
+  background-color: #faf9f6 !important;
+  border: none;
+  border-radius: 10px;
+}
+
+.cart-page .cart-img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cart-page .delete-btn-cart {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cart-page .proceed-to-pay-btn {
+  background-color: #4D2B15;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cart-page .proceed-to-pay-btn:hover {
+  background-color: #715737;
+  color: white;
+}

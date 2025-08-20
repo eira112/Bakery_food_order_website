@@ -1,0 +1,260 @@
+
+/* Scoped styles for HomePage component only */
+.home-page {
+    font-family: Halton;
+    background-color: #F3EEE6;
+    color: #4D2B15 !important;
+    font-weight: 700 !important;
+}
+
+.home-page html {
+    scroll-behavior: smooth;
+}
+
+.home-page .log-in-btn {
+    color: #F3EEE6 !important;
+    border: 1px solid #4D2B15 !important;
+    background-color: #4D2B15;
+}
+
+.home-page .log-in-btn:hover {
+    color: #F3EEE6 !important;
+    border: 1px solid #4D2B15 !important;
+    background-color: #4D2B15;
+}
+
+.home-page .log-in-btn:active {
+    color: #F3EEE6 !important;
+    border: 1px solid #4D2B15 !important;
+    background-color: #4D2B15 !important;
+}
+
+.home-page .sign-up-btn {
+    color: #715737 !important;
+    border: 1px solid #715737 !important;
+    background-color: #F3EEE6;
+}
+
+/* Menu sections */
+.home-page .menu-section {
+    background-color: #E6DCD2;
+    color: #4D2B15;
+    text-align: center;
+}
+
+.home-page .menu-section-container {
+    padding-top: 35px;
+}
+
+.home-page .menu-items {
+    justify-content: center !important;
+}
+
+/* Adjust carousel controls */
+.home-page .carousel-control-prev,
+.home-page .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-page .custom-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border-radius: 50%; /* Circular buttons */
+    width: 50px;
+    height: 50px;
+    color: black;
+}
+
+/* Adjust the position of the previous button */
+.home-page .carousel-control-prev {
+    margin-top: 50px;
+    /* Adjust the value as needed */
+    margin-left: -90px;
+}
+
+/* Adjust the position of the next button */
+.home-page .carousel-control-next {
+    margin-top: 50px;
+    /* Adjust the value as needed */
+    margin-right: -90px;
+}
+
+/* Target the specific carousel control icons */
+.home-page .carousel-control-prev-icon.custom-icon::before,
+.home-page .carousel-control-next-icon.custom-icon::before {
+    color: #4D2B15 !important;
+}
+
+.home-page .custom-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+.home-page .carousel-btn {
+    background-color: #4D2B15 !important;
+    border-radius: 50%;
+}
+
+/* Set a fixed size for the carousel container */
+.home-page #Menu-carousel {
+    width: 100%; /* Full width of the parent container */
+    max-width: 900px; /* Maximum width of the carousel container */
+    min-height: 600px;
+    margin: 0 auto; /* Center the carousel */
+    position: relative; /* For positioning controls */
+}
+
+/* Ensure that carousel items fit within the fixed size */
+.home-page .carousel-inner {
+    height: 100%; /* Full height of the carousel container */
+}
+
+/* Ensure each carousel item fits the container */
+.home-page .carousel-item {
+    height: 100%; /* Full height of the carousel container */
+}
+
+/* Style for cards within carousel items */
+.home-page .card {
+    height: 100%; /* Full height of the carousel item */
+    display: flex;
+    flex-direction: column; /* Ensure the card content stacks vertically */
+    width: 100%; /* Ensure the card fits the width of the container */
+    background-color: #F3EEE6;
+}
+
+/* Optional: Adjust card image and content to fit within the fixed size */
+.home-page .card-img-top {
+    object-fit: cover; /* Ensure the image covers the area without stretching */
+    height: 200px; /* Fixed height for images */
+}
+
+.home-page .card-body {
+    flex: 1; /* Allow the body to expand and fill available space */
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+    .home-page .card {
+        margin-bottom: 20px !important;
+    }
+}
+
+.home-page .menu-btn-container {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.home-page .menu-btn {
+    background-color: transparent;
+    border: 1px solid #4D2B15;
+    color: #4D2B15;
+    border-radius: 8px;
+    min-width: 150px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: lighter;
+    white-space: nowrap;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.home-page .menu-btn-default {
+    background-color: #4D2B15;
+    color: #E6DCD2;
+}
+
+.home-page .menu-btn:active {
+    background-color: #4D2B15;
+    color: #E6DCD2;
+}
+
+.home-page .price {
+    text-align: center;
+}
+
+.home-page .cart-btn {
+    background-color: #4D2B15;
+    border: none;
+    color: #F3EEE6;
+}
+
+.home-page .cart-btn:hover {
+    background-color: #986e47;
+    border: none;
+    color: #F3EEE6;
+}
+
+.home-page .cart-btn:active {
+    background-color: #986e47 !important;
+    border: none;
+    color: #F3EEE6;
+}
+
+.home-page .price-and-cart {
+    align-items: center;
+}
+
+/* not wanted */
+.home-page .popular-item {
+    color: #4D2B15;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.home-page .popular-card {
+    background-color: #E6DCD2;
+    border: none;
+}
+
+.home-page .tes-card {
+    border-radius: .7rem;
+}
+
+.home-page .star-color {
+    color: #4D2B15 !important;
+}
+
+.home-page li {
+    color: #4D2B15;
+}
+
+.home-page .proceed-to-pay-btn {
+    color: #F3EEE6 !important;
+    border: 1px solid #4D2B15 !important;
+    background-color: #4D2B15;
+    height: 50px;
+}
+
+.home-page .proceed-to-pay-btn:active {
+    color: #F3EEE6 !important;
+    border: 1px solid #4D2B15 !important;
+    background-color: #4D2B15;
+    height: 50px;
+}
+
+.home-page .proceed-to-pay-btn:hover {
+    color: #F3EEE6 !important;
+    border: 1px solid #4D2B15 !important;
+    background-color: #4D2B15;
+    height: 50px;
+}
+
+.home-page .proceed-to-pay-btn:focus {
+    color: #F3EEE6 !important;
+    border: 1px solid #4D2B15 !important;
+    background-color: #4D2B15;
+    height: 50px;
+}
+
+/* footer */
+.home-page footer a {
+    color: #4D2B15; /* Change this to your desired color */
+    text-decoration: none; /* Remove underline */
+}
+
+.home-page footer a:hover {
+    color: #3E2415; /* Change this to a hover color */
+    text-decoration: underline; /* Optional: add underline on hover */
+}
+

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/* @charset "UTF-8";
 
 body, html {
     font-family: Grafic, Arial, sans-serif;
@@ -36,7 +36,7 @@ body, html {
     color: #FF0000;
 }
 
-/* Apply styles to the form container */
+
 .form-container {
     color: aliceblue;
     background-color: transparent;
@@ -48,7 +48,7 @@ body, html {
     text-align: center;
 }
 
-/* Apply styles to the input fields */
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -69,7 +69,7 @@ input[type="password"]::placeholder {
     color: #F3EEE6; 
 }
 
-/* Apply styles to the form button */
+
 input[type="submit"] {
     background-color: #F3EEE6;
     color: #4D2B15;
@@ -102,7 +102,7 @@ input[type="submit"]:hover {
     text-decoration: underline;
 }
 
-/* Home button style */
+
 .go-home {
     display: flex;
     align-items: center;
@@ -183,9 +183,9 @@ input[type="submit"]:hover {
     background-color: #c0c0c0;
 }
 
-/* Responsive breakpoints */
 
-/* Large screens */
+
+
 @media only screen and (min-width: 1200px) {
     .form-container {
     padding: 40px;
@@ -200,7 +200,7 @@ input[type="submit"]:hover {
     }
 }
 
-/* Medium screens */
+
 @media only screen and (max-width: 992px) {
     .form-container {
     max-width: 400px;
@@ -212,7 +212,7 @@ input[type="submit"]:hover {
     }
 }
 
-/* Small screens */
+
 @media only screen and (max-width: 768px) {
     .background {
     background-attachment: scroll;
@@ -248,7 +248,7 @@ input[type="submit"]:hover {
     }
 }
 
-/* Extra small screens */
+
 @media only screen and (max-width: 600px) {
     .form-container {
     max-width: 300px;
@@ -291,7 +291,7 @@ input[type="submit"]:hover {
     }
 }
 
-/* Very small screens */
+
 @media only screen and (max-width: 480px) {
     .center-container {
     padding: 10px;
@@ -324,7 +324,7 @@ input[type="submit"]:hover {
     }
 }
 
-/* Landscape orientation on mobile */
+
 @media only screen and (max-height: 600px) and (orientation: landscape) {
     .center-container {
     align-items: flex-start;
@@ -351,4 +351,4 @@ input[type="submit"]:hover {
     margin-bottom: 10px;
     padding: 8px 12px;
     }
-}
+} */
