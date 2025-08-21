@@ -1,21 +1,82 @@
 import { useState } from "react";
 import { addUser } from "../services/user";
 import signupPhoto from "../Assets/signupPhoto.jpeg";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
+import { findEmail } from "../services/auth";
 
 const SignUp = () => {
-  const [user, setUser] = useState({});
+  const navigate=useNavigate();
+  const [user, setUser] = useState({
+    email:'',
+    password:'',
+    name:'',
+    phone:'',
+    address:''
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
 
+  const [error,setError]=useState({
+    email:'',
+    password:'',
+    name:'',
+    phone:'',
+    address:'',
+    cart: []
+  })
+
+
   const handleSubmit = () => {
-    addUser(user).then((response) => {
-      if (response.data) {
-        console.log("Sign up successful"); // Add notification here
-      }
-    });
+    let hasError=false;
+    let validationError={
+      email:'',
+      password:'',
+      name:'',
+      phone:'',
+      address:''
+    }
+    if(user.email.trim()===''){
+      validationError.email="Please enter your email";
+      hasError=true;
+    }
+    if(user.password.trim()===''){
+      validationError.password="Please enter your password";
+      hasError=true;
+    }
+    if(user.name.trim()===''){
+      validationError.name="Please enter your name";
+      hasError=true;
+    }
+    if(user.phone.trim()===''){
+      validationError.phone="Please enter your phone number";
+      hasError=true;
+    }
+    if(user.address.trim()===''){
+      validationError.address="Please enter your address";
+      hasError=true;
+    }
+    setError(validationError);
+    if(!hasError){
+      const emailExist=false;
+      findEmail(user.email).then((response)=>{
+        if(response.length>0){
+          toast.error("This email already exist");
+        }else{
+          addUser(user).then((response) => {
+            if (response.data) {
+              toast.success("Signed up sucessfully. Please login");
+              navigate("/login")
+            }
+          });
+        }
+      })
+      
+    }
+    
   };
 
   return (
@@ -43,8 +104,9 @@ const SignUp = () => {
               placeholder="Email"
               onChange={handleChange}
               className="px-4 py-3 rounded-full bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-white"
-              required
+              required 
             />
+            {error.email && <p className="error">{error.email}</p>}
             <input
               type="password"
               name="password"
@@ -53,6 +115,7 @@ const SignUp = () => {
               className="px-4 py-3 rounded-full bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-white"
               required
             />
+            {error.password && <p className="error">{error.password}</p>}
             <input
               type="text"
               name="name"
@@ -61,6 +124,7 @@ const SignUp = () => {
               className="px-4 py-3 rounded-full bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-white"
               required
             />
+            {error.name && <p className="error">{error.name}</p>}
             <input
               type="text"
               name="phone"
@@ -69,6 +133,7 @@ const SignUp = () => {
               className="px-4 py-3 rounded-full bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-white"
               required
             />
+            {error.phone && <p className="error">{error.phone}</p>}
             <input
               type="text"
               name="address"
@@ -77,6 +142,7 @@ const SignUp = () => {
               className="px-4 py-3 rounded-full bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-white"
               required
             />
+            {error.address && <p className="error">{error.address}</p>}
             <button
               type="button"
               onClick={handleSubmit}

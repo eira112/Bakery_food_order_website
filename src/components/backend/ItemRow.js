@@ -1,4 +1,7 @@
+import { NavLink, useNavigate } from "react-router";
+
 const ItemRow = (props) => {
+  
   return (
     <>
       {props.items &&
@@ -35,10 +38,14 @@ const ItemRow = (props) => {
               <td className="px-4 py-2 text-gray-900 font-semibold">Rs. {item.price}</td>
 
               <td className="px-4 py-2 flex gap-2">
-                <button className="px-3 py-1 bg-blue-100 text-blue-600 rounded hover:bg-blue-200 transition">
+                <NavLink to={`/admin/manageMenu/edit/${item.id}`}><button className="px-3 py-1 bg-blue-100 text-blue-600 rounded hover:bg-blue-200 transition">
                   Edit
-                </button>
-                <button className="px-3 py-1 bg-red-100 text-red-600 rounded hover:bg-red-200 transition">
+                </button></NavLink>
+                <button className="px-3 py-1 bg-red-100 text-red-600 rounded hover:bg-red-200 transition" onClick={() => {
+                  if (window.confirm("Are you sure you want to delete this item?")) {
+                    props.onDelete(item.id);
+                  }
+                }}>
                   Delete
                 </button>
               </td>

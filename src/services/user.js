@@ -5,3 +5,8 @@ export const addUser=async(user)=>{
     return data;
     
 }
+
+export const getUserById = async(id)=>{
+    let data = await axios.get(`http://localhost:4000/users/${id}`)
+    return data
+}

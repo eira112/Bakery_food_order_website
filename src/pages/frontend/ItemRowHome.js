@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router"
+import { handleAddToCart } from "../../services/cart";
 
 const ItemRowHome = (props)=>{
     const navigate=useNavigate();
     if(props.items.length > 0){
+        let id = localStorage.getItem("authToken")
         return props.items.map((item,index)=>{
             if(item.category === props.category){
                 return(
@@ -16,6 +18,7 @@ const ItemRowHome = (props)=>{
                                 <span className="fw-bold">Rs. {item.price}</span>
                                 <button className="btn btn-sm cart-btn" onClick={(e)=>{
                                     e.stopPropagation();
+                                    handleAddToCart(id,1,item.id)
                                     // add add to cart logic later
                                 }}>Add to Cart</button>
                                 </div>

@@ -19,7 +19,7 @@ function App() {
         <Routes>
           {/* frontend routes */}
           <Route path='/' element={<HomePage/>}/>
-          <Route path='/description' element={<Description/>}/>
+          <Route path='/description/:id' element={<Description/>}/>
           <Route path='/cart' element={<Cart/>}/>
 
           {/* Backend routes */}
@@ -29,6 +29,7 @@ function App() {
           <Route path='/admin' element={<AdminLayout/>}>
             <Route path='/admin/manageMenu' element={<ManageMenu/>}/>
             <Route path='/admin/manageMenu/addProduct' element={<AddProduct/>}/>
+            <Route path='/admin/manageMenu/edit/:id' element={<AddProduct/>}/>
             
           </Route>
           <Route path='/dash' element={<CoffeeCottageDashboard/>}/>

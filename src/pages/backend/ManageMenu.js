@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-import { getAllItem } from "../../services/item";
+import { deleteItem, getAllItem } from "../../services/item";
 import ItemRow from "../../components/backend/ItemRow";
+import { toast } from "react-toastify";
+import { NavLink } from "react-router";
 
 const ManageMenu = () => {
   const [items, setItem] = useState([]);
+
+
 
   useEffect(() => {
     getAllItem().then((response) => {
@@ -13,6 +17,15 @@ const ManageMenu = () => {
     });
   }, []);
 
+    const handleDelete=(id)=>{
+    deleteItem(id).then((response)=>{
+      toast.success("Item deleted successfully");
+      getAllItem().then((response)=>{
+        setItem(response.data);
+      })
+    })
+  }
+
   return (
     <main className="flex-1 min-h-screen bg-gray-50 p-8">
       {/* Header */}
@@ -20,9 +33,9 @@ const ManageMenu = () => {
         <h1 className="text-3xl font-bold text-gray-900 mb-3 md:mb-0">
           Manage Menu
         </h1>
-        <button className="px-4 py-2 bg-yellow-800 text-white rounded-lg hover:bg-yellow-900 transition">
+        <NavLink to={'/admin/manageMenu/addProduct'}><button className="px-4 py-2 bg-yellow-800 text-white rounded-lg hover:bg-yellow-900 transition" >
           Add Product
-        </button>
+        </button></NavLink>
       </div>
 
       {/* Table */}
@@ -39,7 +52,7 @@ const ManageMenu = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            <ItemRow items={items} />
+            <ItemRow items={items} onDelete={handleDelete} />
           </tbody>
         </table>
       </div>

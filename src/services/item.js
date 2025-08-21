@@ -12,9 +12,23 @@ export const getAllItem=async()=>{
 
 export const getItemByCategory = async(category)=>{
     const data = await axios.get(`http://localhost:4000/items/?category=${category}`)
-    return data
+    return data;
 }
 
+export const updateItem= async(id,item)=>{
+    const data=await axios.put(`http://localhost:4000/items/${id}`,item);
+    return data;
+}
+
+export const deleteItem=async(id)=>{
+    const data=await axios.delete(`http://localhost:4000/items/${id}`);
+    return data.da;
+}
+
+export const getItemById=async(id)=>{
+    const data=await axios.get(`http://localhost:4000/items/?id=${id}`)
+    return data;
+}
 
 export const fileToBase64 = (file)=>{
 

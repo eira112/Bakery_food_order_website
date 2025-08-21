@@ -9,6 +9,10 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const[error, setError]=useState({
+    email:'',
+    password:''
+  })
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
@@ -17,7 +21,7 @@ const Login = () => {
     logUserIn(email, password).then((response) => {
       if (response.data.length > 0) {
         toast.success("Login successful!");
-        localStorage.setItem("authToken",response.data.id)
+        localStorage.setItem("authToken",response.data[0].id)
         navigate("/manageMenu", { replace: true });
       }
     });
