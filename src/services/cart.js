@@ -20,3 +20,7 @@ export const handleAddToCart = async(userId,quantity,itemId)=>{
     axios.patch(`http://localhost:4000/users/${userId}`,{cart: currentCart})
 
 }
+
+export const updateUserCart = async (userId, cart) => {
+  return axios.patch(`http://localhost:4000/users/${userId}`, { cart });
+};
