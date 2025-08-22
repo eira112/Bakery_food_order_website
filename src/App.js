@@ -11,6 +11,7 @@ import CoffeeCottageDashboard from './pages/backend/CoffeeCottageDashboard';
 import HomePage from './pages/frontend/HomePage';
 import Description from './pages/frontend/Description';
 import Cart from './pages/frontend/Cart';
+import Checkout from './pages/frontend/Checkout';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/' element={<HomePage/>}/>
           <Route path='/description/:id' element={<Description/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
 
           {/* Backend routes */}
           <Route path="/signup" element={<SignUp/>} ></Route>

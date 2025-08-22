@@ -59,7 +59,7 @@ function Description() {
               </button>
             </div>
 
-            <button className="add-to-cart-btn" onClick={()=>handleAddToCart(userId,quantity,id)}>
+            <button className="add-to-cart-btn" onClick={()=>handleAddToCart(userId,quantity,id,item.price)}>
               Add to Cart
             </button>
           </div>

@@ -18,7 +18,7 @@ const ItemRowHome = (props)=>{
                                 <span className="fw-bold">Rs. {item.price}</span>
                                 <button className="btn btn-sm cart-btn" onClick={(e)=>{
                                     e.stopPropagation();
-                                    handleAddToCart(id,1,item.id)
+                                    handleAddToCart(id,1,item.id,item.price)
                                     // add add to cart logic later
                                 }}>Add to Cart</button>
                                 </div>

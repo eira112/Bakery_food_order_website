@@ -18,13 +18,32 @@ const Login = () => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
   const handleSubmit = () => {
-    logUserIn(email, password).then((response) => {
+    let hasError=false;
+    let validationError={
+      email:'',
+      password:''
+    }
+    if(email.trim()===''){
+      validationError.email="Please enter your email";
+      hasError=true;
+    }
+    if(password.trim()===''){
+      validationError.password="Please enter your password";
+      hasError=true;
+    }
+    setError(validationError);
+    if(!hasError){
+      logUserIn(email, password).then((response) => {
       if (response.data.length > 0) {
         toast.success("Login successful!");
         localStorage.setItem("authToken",response.data[0].id)
-        navigate("/manageMenu", { replace: true });
+        navigate("/", { replace: true });
+      }else{
+        toast.error("Invalid credentials. Try again!")
       }
     });
+    }
+    
   };
 
   return (
@@ -50,6 +69,7 @@ const Login = () => {
             onChange={handleEmailChange}
             className="px-4 py-3 rounded-2xl bg-white/20 placeholder-white focus:ring-2 focus:ring-indigo-400 focus:outline-none w-full"
           />
+          {error.email && <p className="error">{error.email}</p>}
           <input
             type="password"
             placeholder="Password"
@@ -57,6 +77,7 @@ const Login = () => {
             onChange={handlePasswordChange}
             className="px-4 py-3 rounded-2xl bg-white/20 placeholder-white focus:ring-2 focus:ring-indigo-400 focus:outline-none w-full"
           />
+          {error.password && <p className="error">{error.password}</p>}
           <input
             type="button"
             value="Sign In"
