@@ -1,0 +1,230 @@
+/* Scope all rules to this page */
+.custom-cake-page {
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  background-color: #F3EEE6;
+  min-height: 100vh;
+  color: #4D2B15;
+}
+
+/* Header */
+.custom-cake-page .custom-cake-header {
+  background-color: #F3EEE6;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.custom-cake-page .custom-cake-header-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+  color: #4D2B15;
+  letter-spacing: -0.025em;
+}
+
+.custom-cake-page .custom-cake-header-subtitle {
+  font-size: 1rem;
+  color: #8B6F47;
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Container + content */
+.custom-cake-page .custom-cake-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.custom-cake-page .custom-cake-content {
+  padding: 3rem 0;
+}
+
+/* Section */
+.custom-cake-page .custom-cake-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #E6DCD2;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section titles */
+.custom-cake-page .custom-cake-section-title,
+.custom-cake-page .custom-cake-first-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4D2B15;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-cake-page .custom-cake-section-title {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E6DCD2;
+}
+
+.custom-cake-page .custom-cake-first-section-title {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Form layout */
+.custom-cake-page .custom-cake-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.custom-cake-page .custom-cake-form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.custom-cake-page .custom-cake-form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.custom-cake-page label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4D2B15;
+  margin-bottom: 0.5rem;
+}
+
+/* Inputs & selects (generic) */
+.custom-cake-page input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+.custom-cake-page select,
+.custom-cake-page textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #E6DCD2;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+  background-color: #fff;
+  font-family: inherit;
+}
+
+.custom-cake-page input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+.custom-cake-page select:focus,
+.custom-cake-page textarea:focus {
+  outline: none;
+  border-color: #4D2B15;
+}
+
+/* Textarea sizes */
+.custom-cake-page textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.custom-cake-page .textarea-large {
+  min-height: 120px;
+}
+
+/* File input */
+.custom-cake-page input[type="file"] {
+  width: 100%;
+  padding: 1rem;
+  border: 2px dashed #E6DCD2;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background-color: rgba(77, 43, 21, 0.02);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.custom-cake-page input[type="file"]:hover {
+  border-color: #4D2B15;
+}
+
+/* Checkbox & radio */
+.custom-cake-page .custom-cake-checkbox-label,
+.custom-cake-page .custom-cake-radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.5rem;
+}
+
+.custom-cake-page .custom-cake-checkbox {
+  margin-right: 0.75rem;
+  accent-color: #4D2B15;
+}
+
+.custom-cake-page .custom-cake-radio {
+  margin-right: 0.5rem;
+  accent-color: #4D2B15;
+}
+
+.custom-cake-page .custom-cake-contact-preference {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Price notice */
+.custom-cake-page .custom-cake-price-notice {
+  background-color: rgba(77, 43, 21, 0.05);
+  border: 1px solid #E6DCD2;
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.custom-cake-page .custom-cake-price-notice-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4D2B15;
+  margin-bottom: 0.5rem;
+}
+
+.custom-cake-page .custom-cake-price-notice-text {
+  font-size: 0.875rem;
+  color: #8B6F47;
+  line-height: 1.5;
+}
+
+/* Submit button */
+.custom-cake-page .custom-cake-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4D2B15;
+  color: #F3EEE6;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform: scale(1);
+  box-shadow: 0 2px 4px rgba(77, 43, 21, 0.1);
+}
+
+.custom-cake-page .custom-cake-button:hover {
+  background-color: #6B3D26;
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(77, 43, 21, 0.15);
+}
+
+/* Responsive: stack form columns on small screens */
+@media (max-width: 640px) {
+  .custom-cake-page .custom-cake-form-row,
+  .custom-cake-page .custom-cake-form-row-3 {
+    grid-template-columns: 1fr;
+  }
+}

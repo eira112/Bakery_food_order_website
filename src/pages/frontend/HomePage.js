@@ -13,8 +13,17 @@ import customImg from '../../Assets/custom3.jpeg';
 import Navbar from '../../components/frontend/Navbar';
 import { getAllItem, getItemByCategory } from '../../services/item';
 import ItemRowHome from './ItemRowHome';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router';
 
 const HomePage = () => {
+  const navigate=useNavigate();
+  function logout(){
+      localStorage.clear();
+      toast.success("Sucessfully logged out");
+      navigate('/login');
+  
+    }
   const [activeCategory, setActiveCategory] = useState('Cakes');
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isLoggedIn, setLoggedIn] = useState(false)
@@ -74,10 +83,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="home-page">
-      {/* Navbar */}
-      <Navbar/>
-
+    <div>
       {/* Hero Section */}
       <div className="container col-xxl-8 px-4 py-5">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -95,7 +101,7 @@ const HomePage = () => {
             <h1 className="display-5 fw-bold lh-1 mb-3">Cakes and Bakes</h1>
             <p className="lead">Savour the flavours of our cafe from the comfort of your own home.</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                {isLoggedIn &&  <a href="/login" className="btn log-in-btn btn-lg px-4 me-md-2">Log Out</a>}
+                {isLoggedIn &&  <a href="/login" className="btn log-in-btn btn-lg px-4 me-md-2" onClick={logout}>Log Out</a>}
               {!isLoggedIn && (
                 <>
                     <a href="/login" className="btn log-in-btn btn-lg px-4 me-md-2">Log in</a>

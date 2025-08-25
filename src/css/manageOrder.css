@@ -1,0 +1,98 @@
+/* SCOPED: only affects ManageOrder via .manage-order-page */
+.manage-order-page { flex: 1 1 auto; min-height: 100vh; background: #f9fafb; padding: 2rem; }
+
+/* Header */
+.manage-order-page .mo-header { display: flex; flex-direction: column; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; gap: 0.75rem; }
+@media (min-width: 768px) { .manage-order-page .mo-header { flex-direction: row; } }
+.manage-order-page .mo-title { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; color: #111827; margin: 0; }
+@media (min-width: 768px) { .manage-order-page .mo-title { margin-bottom: 0; } }
+.manage-order-page .mo-total { font-size: 0.875rem; color: #4b5563; }
+
+/* Panel */
+.manage-order-page .mo-panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 1.5rem; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+.manage-order-page .mo-controls { display: flex; flex-direction: column; gap: 1rem; }
+@media (min-width: 768px) { .manage-order-page .mo-controls { flex-direction: row; } }
+
+/* Search */
+.manage-order-page .mo-search { position: relative; flex: 1 1 auto; }
+.manage-order-page .mo-search-icon { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; color: #9ca3af; }
+.manage-order-page .mo-input { width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border: 1px solid #d1d5db; border-radius: 0.5rem; background: #fff; }
+.manage-order-page .mo-input:focus { outline: none; border-color: transparent; box-shadow: 0 0 0 2px #eab308; }
+
+/* Status select (filter) */
+.manage-order-page .mo-status { width: 100%; }
+@media (min-width: 768px) { .manage-order-page .mo-status { width: 12rem; } }
+.manage-order-page .mo-select { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem; background: #fff; }
+.manage-order-page .mo-select:focus { outline: none; border-color: transparent; box-shadow: 0 0 0 2px #eab308; }
+
+/* Empty state */
+.manage-order-page .mo-empty { text-align: center; padding: 3rem; background: #fff; border-radius: 0.5rem; border: 1px solid #e5e7eb; }
+.manage-order-page .mo-empty-icon { display: block; margin: 0 auto 1rem; color: #9ca3af; }
+.manage-order-page .mo-empty-text { color: #6b7280; font-size: 1.125rem; }
+
+/* Date section */
+.manage-order-page .mo-date-section { margin-bottom: 1.5rem; }
+.manage-order-page .mo-date-header { display: flex; align-items: center; margin-bottom: 0.75rem; }
+.manage-order-page .mo-date-title { font-size: 1.125rem; line-height: 1.75rem; font-weight: 600; color: #374151; }
+.manage-order-page .mo-date-title.is-today { color: #92400e; } /* yellow-800 */
+
+/* Table wrapper */
+.manage-order-page .mo-table-wrap { overflow-x: auto; border: 1px solid #e5e7eb; border-radius: 0.5rem; background: #fff; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+.manage-order-page .mo-table { min-width: 100%; border-collapse: collapse; }
+.manage-order-page .mo-thead { background: #f3f4f6; }
+.manage-order-page .mo-th { text-align: left; padding: 0.75rem 1rem; color: #374151; font-weight: 600; font-size: 0.875rem; border-bottom: 1px solid #e5e7eb; }
+
+.manage-order-page .mo-row { transition: background-color 150ms ease; }
+.manage-order-page .mo-row:hover td { background: #f9fafb; }
+.manage-order-page .mo-td { padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb; }
+
+/* Typography helpers (scoped) */
+.manage-order-page .mo-strong { font-weight: 600; color: #111827; }
+.manage-order-page .mo-dark { color: #111827; }
+.manage-order-page .mo-sm { font-size: 0.875rem; }
+.manage-order-page .mo-xs { font-size: 0.75rem; }
+.manage-order-page .mo-muted { color: #6b7280; }
+.manage-order-page .ml-2 { margin-left: 0.5rem; }
+.manage-order-page .mb-1 { margin-bottom: 0.25rem; }
+
+/* Actions */
+.manage-order-page .mo-actions { display: flex; gap: 0.5rem; align-items: center; }
+.manage-order-page .mo-view-btn { display: flex; align-items: center; font-size: 0.75rem; color: #2563eb; background: transparent; border: none; padding: 0; cursor: pointer; transition: color 150ms ease; }
+.manage-order-page .mo-view-btn:hover { color: #1e40af; }
+
+.manage-order-page .mo-status-select { font-size: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; padding: 0.25rem 0.5rem; }
+.manage-order-page .mo-status-select:focus { outline: none; border-color: transparent; box-shadow: 0 0 0 2px #eab308; }
+
+/* Expanded row */
+.manage-order-page .mo-expanded-cell { padding: 1rem; background: #f9fafb; border-top: 1px solid #e5e7eb; }
+.manage-order-page .mo-details-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 768px) { .manage-order-page .mo-details-grid { grid-template-columns: 1fr 1fr; } }
+
+.manage-order-page .mo-section-title { font-weight: 600; color: #111827; margin-bottom: 0.75rem; }
+
+/* Items list */
+.manage-order-page .mo-item { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb; }
+.manage-order-page .mo-item:last-child { border-bottom: none; }
+.manage-order-page .mo-total-row { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; font-weight: 700; font-size: 1.125rem; border-top: 2px solid #d1d5db; }
+
+/* Customer info */
+.manage-order-page .mo-customer { display: grid; gap: 0.5rem; font-size: 0.875rem; }
+.manage-order-page .mo-label { font-weight: 500; color: #374151; margin-right: 0.5rem; }
+.manage-order-page .mo-value { color: #111827; margin-left: 0.5rem; }
+
+/* Status badge */
+.manage-order-page .status-badge { display: inline-flex; align-items: center; padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; border: 1px solid transparent; }
+.manage-order-page .status-badge.pending    { background: #fef9c3; color: #92400e; border-color: #fef08a; }
+.manage-order-page .status-badge.preparing  { background: #dbeafe; color: #1e40af; border-color: #bfdbfe; }
+.manage-order-page .status-badge.completed  { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+.manage-order-page .status-badge.cancelled  { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+
+/* Icon sizes (scoped) */
+.manage-order-page .icon-3 { width: 0.75rem; height: 0.75rem; }
+.manage-order-page .icon-4 { width: 1rem; height: 1rem; }
+.manage-order-page .icon-12 { width: 3rem; height: 3rem; }
+.manage-order-page .mr-1 { margin-right: 0.25rem; }
+.manage-order-page .mr-2 { margin-right: 0.5rem; }
+
+/* Minor color helpers for icons in header (kept scoped) */
+.manage-order-page .text-gray-600 { color: #4b5563; }

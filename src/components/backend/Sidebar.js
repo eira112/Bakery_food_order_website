@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router";
+import { toast } from 'react-toastify';
+
 const Sidebar = () => {
+  const navigate=useNavigate();
+  function logout(){
+    localStorage.clear();
+    toast.success("Sucessfully logged out");
+    navigate('/login');
+
+  }
   return (
     <aside className="w-72 bg-white border-r border-gray-200 flex flex-col min-h-screen py-8">
       {/* Logo */}
@@ -12,7 +22,7 @@ const Sidebar = () => {
         <ul className="space-y-2">
           <li>
             <a
-              href="#"
+              href="/admin/ManageMenu"
               className="flex items-center  py-3 text-gray-900 font-medium rounded-r-md bg-gray-100"
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
@@ -23,7 +33,7 @@ const Sidebar = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/admin/manageOrder"
               className="flex items-center px-0 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-r-md transition-colors"
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
@@ -34,7 +44,7 @@ const Sidebar = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/admin/manageCustomOrder"
               className="flex items-center px-0 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-r-md transition-colors"
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
@@ -45,25 +55,25 @@ const Sidebar = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/admin/customRequest"
               className="flex items-center px-0 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-r-md transition-colors"
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
               </svg>
-              Customers
+              Custom Requests
             </a>
           </li>
           <li>
             <a
-              href="#"
+              href="/manageCustomCake"
               className="flex items-center px-0 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-r-md transition-colors"
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
                 <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
               </svg>
-              Analytics
+              Manage Custom Cake
             </a>
           </li>
         </ul>
@@ -71,9 +81,8 @@ const Sidebar = () => {
 
       {/* Logout */}
       <div className="px-0 mt-auto pt-4 border-t border-gray-200">
-        <a
-          href="#"
-          className="flex items-center px-6 py-3 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-r-md transition-colors"
+        <div
+          className="flex items-center px-6 py-3 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-r-md transition-colors" onClick={logout}
         >
           <svg className="w-5 h-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
             <path
@@ -83,7 +92,7 @@ const Sidebar = () => {
             />
           </svg>
           Logout
-        </a>
+        </div>
       </div>
     </aside>
   );

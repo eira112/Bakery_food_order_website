@@ -1,0 +1,465 @@
+/* myOrder.css - Scoped styles for MyOrder component only */
+
+.my-order-page {
+  min-height: 100vh;
+  background-color: #F3EEE6;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header */
+.my-order-header {
+  background-color: #E6DCD2;
+  border-bottom: 1px solid #D4C9BF;
+}
+
+.my-order-container {
+  max-width: 1152px; /* max-w-6xl equivalent */
+  margin: 0 auto;
+  padding: 2rem 1.5rem; /* py-8 px-6 equivalent */
+}
+
+.my-order-title {
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+  font-weight: 600;
+  color: #4D2B15;
+  margin: 0;
+}
+
+.my-order-subtitle {
+  color: #715737;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Content Container */
+.my-order-content-container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Search and Tabs Section */
+.my-order-controls {
+  margin-bottom: 2rem;
+}
+
+.my-order-controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .my-order-controls-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Search */
+.my-order-search-container {
+  position: relative;
+  flex: 1;
+  max-width: 28rem; /* max-w-md */
+}
+
+.my-order-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: #715737;
+}
+
+.my-order-search-input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem; /* py-2 pr-4 pl-10 */
+  border: 1px solid #D4C9BF;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #4D2B15;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.my-order-search-input:focus {
+  outline: none;
+  border-color: #4D2B15;
+  box-shadow: 0 0 0 2px rgba(77, 43, 21, 0.2);
+}
+
+.my-order-search-input::placeholder {
+  color: #715737;
+  opacity: 0.7;
+}
+
+/* Tabs */
+.my-order-tabs {
+  display: flex;
+  background-color: #E6DCD2;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+.my-order-tab {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #715737;
+}
+
+.my-order-tab:hover:not(.my-order-tab--active) {
+  opacity: 0.8;
+}
+
+.my-order-tab--active {
+  background-color: white;
+  color: #4D2B15;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Orders List */
+.my-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Empty State */
+.my-order-empty {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.my-order-empty-icon {
+  margin: 0 auto 1rem;
+  width: 3rem;
+  height: 3rem;
+  color: #715737;
+}
+
+.my-order-empty-text {
+  margin-bottom: 1rem;
+  color: #715737;
+}
+
+.my-order-empty-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #4D2B15;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.my-order-empty-button:hover {
+  opacity: 0.9;
+  color: white;
+  text-decoration: none;
+}
+
+/* Order Cards */
+.my-order-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #E6DCD2;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.my-order-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.my-order-card-content {
+  padding: 1.5rem;
+}
+
+/* Card Header */
+.my-order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.my-order-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.my-order-card-title {
+  font-weight: 600;
+  color: #4D2B15;
+  margin: 0;
+}
+
+.my-order-card-date {
+  font-size: 0.875rem;
+  color: #715737;
+}
+
+/* Status Badges */
+.my-order-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.my-order-status--delivered,
+.my-order-status--completed {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.my-order-status--progress,
+.my-order-status--production {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.my-order-status--pending,
+.my-order-status--quote {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.my-order-urgent {
+  background-color: #fecaca;
+  color: #991b1b;
+}
+
+/* Items Section */
+.my-order-items {
+  margin-bottom: 1rem;
+}
+
+.my-order-items-count {
+  font-size: 0.875rem;
+  color: #715737;
+  margin-bottom: 0.5rem;
+}
+
+.my-order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.my-order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.my-order-item-name {
+  color: #4D2B15;
+}
+
+.my-order-item-price {
+  font-weight: 500;
+  color: #4D2B15;
+}
+
+.my-order-items-more {
+  font-size: 0.75rem;
+  color: #715737;
+}
+
+/* Order Details */
+.my-order-details {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: #715737;
+  margin-bottom: 1rem;
+}
+
+.my-order-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.my-order-detail-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 12rem; /* max-w-48 */
+}
+
+/* Customer Info Grid */
+.my-order-customer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .my-order-customer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.my-order-customer-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4D2B15;
+  margin-bottom: 0.25rem;
+}
+
+.my-order-customer-phone {
+  font-size: 0.875rem;
+  color: #715737;
+}
+
+.my-order-cake-info {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4D2B15;
+  margin-bottom: 0.25rem;
+}
+
+.my-order-cake-theme {
+  font-size: 0.875rem;
+  color: #715737;
+}
+
+/* Special Instructions */
+.my-order-instructions {
+  background-color: #F9F6F2;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.my-order-instructions-label {
+  font-size: 0.75rem;
+  color: #715737;
+  margin-bottom: 0.25rem;
+}
+
+.my-order-instructions-text {
+  font-size: 0.875rem;
+  color: #4D2B15;
+  margin: 0;
+}
+
+/* Card Footer */
+.my-order-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #E6DCD2;
+}
+
+.my-order-total {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4D2B15;
+}
+
+.my-order-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.my-order-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.my-order-btn--secondary {
+  color: #715737;
+  border: 1px solid #D4C9BF;
+  background-color: transparent;
+}
+
+.my-order-btn--secondary:hover {
+  opacity: 0.8;
+}
+
+.my-order-btn--primary {
+  background-color: #4D2B15;
+  color: white;
+}
+
+.my-order-btn--primary:hover {
+  opacity: 0.9;
+}
+
+.my-order-btn--success {
+  background-color: #2D7A32;
+  color: white;
+}
+
+.my-order-btn--success:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .my-order-container,
+  .my-order-content-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .my-order-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .my-order-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .my-order-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .my-order-actions {
+    justify-content: center;
+  }
+
+  .my-order-details {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .my-order-detail-text {
+    max-width: none;
+  }
+}

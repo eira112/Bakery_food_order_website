@@ -20,7 +20,7 @@ function Navbar() {
 
         <ul className={`nav-links ${navbarOpen ? "active" : ""}`}>
           <li className="nav-item">
-            <a href="/">Home</a>
+            <a href="/home">Home</a>
           </li>
           <li className="nav-item">
             <a href="/myOrder">My Orders</a>

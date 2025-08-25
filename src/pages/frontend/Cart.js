@@ -87,9 +87,6 @@ const handleDelete = async (index,price) => {
 };
 
 
-
-
-
   return (
     <div className="cart-page">
       <section className="h-100">
@@ -168,9 +165,10 @@ const handleDelete = async (index,price) => {
                 <div className="card-body">
                   <form>
                     <input
-                      type="submit"
+                      type="button"
                       className="btn proceed-to-pay-btn"
                       value="Proceed to Checkout"
+                      onClick={()=>navigate("/checkout")}
                     />
                   </form>
                 </div>

@@ -33,15 +33,23 @@ const Login = () => {
     }
     setError(validationError);
     if(!hasError){
-      logUserIn(email, password).then((response) => {
-      if (response.data.length > 0) {
-        toast.success("Login successful!");
-        localStorage.setItem("authToken",response.data[0].id)
-        navigate("/", { replace: true });
-      }else{
-        toast.error("Invalid credentials. Try again!")
+      if(email==='admin@gmail.com' && password==='admin'){
+        toast.success("Welcome back admin!");
+        localStorage.setItem("authToken",'admin12')
+        navigate("/admin/manageMenu", { replace: true });
+
       }
-    });
+      else{
+        logUserIn(email, password).then((response) => {
+        if (response.data.length > 0) {
+          toast.success("Login successful!");
+          localStorage.setItem("authToken",response.data[0].id)
+          navigate("/home", { replace: true });
+        }else{
+          toast.error("Invalid credentials. Try again!")
+        }
+        });
+      }
     }
     
   };
@@ -50,7 +58,7 @@ const Login = () => {
     <div className="min-h-screen relative flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${signupPhoto})` }}>
       {/* Home button */}
       <a
-        href="/"
+        href="/home"
         className="absolute top-5 left-5 flex items-center text-white font-medium hover:underline transition"
       >
         <i className="bi bi-arrow-left mr-2"></i> Go Home

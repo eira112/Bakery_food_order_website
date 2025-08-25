@@ -12,6 +12,10 @@ import HomePage from './pages/frontend/HomePage';
 import Description from './pages/frontend/Description';
 import Cart from './pages/frontend/Cart';
 import Checkout from './pages/frontend/Checkout';
+import CustomCake from './pages/frontend/CustomCake';
+import UserLayout from './pages/frontend/UserLayout';
+import CustomRequest from './pages/backend/CustomRequest';
+import MyOrder from './pages/frontend/MyOrder';
 
 function App() {
   return (
@@ -19,10 +23,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* frontend routes */}
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/description/:id' element={<Description/>}/>
-          <Route path='/cart' element={<Cart/>}/>
-          <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='/' element={<UserLayout/>}>
+            <Route path='/home' element={<HomePage/>}/>
+            <Route path='/description/:id' element={<Description/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+            <Route path='/checkout' element={<Checkout/>}/>
+            <Route path='/customCake' element={<CustomCake/>}/>
+            <Route path='/myOrder' element={<MyOrder/>}/>
+          </Route>
+          
 
           {/* Backend routes */}
           <Route path="/signup" element={<SignUp/>} ></Route>
@@ -32,10 +41,14 @@ function App() {
             <Route path='/admin/manageMenu' element={<ManageMenu/>}/>
             <Route path='/admin/manageMenu/addProduct' element={<AddProduct/>}/>
             <Route path='/admin/manageMenu/edit/:id' element={<AddProduct/>}/>
+            <Route path='/admin/manageOrder' element={<ManageOrder/>}/>
+            <Route path='/admin/customRequest' element={<CustomRequest/>}/>
+            
             
           </Route>
           <Route path='/dash' element={<CoffeeCottageDashboard/>}/>
-          <Route path='/manageOrder' element={<ManageOrder/>}/>
+          
+          
           
         </Routes>
       </BrowserRouter>
